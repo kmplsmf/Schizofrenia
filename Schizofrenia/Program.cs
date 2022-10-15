@@ -1,36 +1,36 @@
 while (true)
 {
-    Console.Write("ввод операции: ");
+    Console.WriteLine("ввод операции: ");
     Console.WriteLine("1: игра угадай число");
     Console.WriteLine("2: таблица умножения");
-    Console.WriteLine("3: остаток от деления");
-    Console.WriteLine("4: выход");
+    Console.WriteLine("3: выход");
     int operation = Convert.ToInt32(Console.ReadLine());
     if (operation == 4)
     {
         break;
     }
-    switch (operation)
+    if (operation == 1)
     {
-        case 1:
-            static void Man()
-            {
-                randNum();
-            }
-            break;
-        case 2:
-            static void Mai()
-            {
-                umnozhenie();
-            }
-            break;
+        Man();
+        static void Man()
+        {
+            randNum();
+        }
     }
-    static void randNum();
+    if (operation == 2)
+    {
+        Mai();
+        static void Mai()
+        {
+            umnozhenie();
+        }
+    }
+    static void randNum()
     {
         Random rnd = new();
         while (true)
         {
-            int value = rnd.Next(0, 100);
+            int value = rnd.Next(0, 10);
             int num = Convert.ToInt32(Console.ReadLine());
             if (num == value)
             {
@@ -44,18 +44,21 @@ while (true)
 
         }
     }
-    static void umnozhenie();
+    static void umnozhenie()
     {
-        int[,] table = new int[10, 10];
-        for (int i = 1; i < 10; ++i)
+        while (true)
         {
-            for (int j = 1; j < 10; ++j)
+            int[,] table = new int[10, 10];
+            for (int i = 1; i < 10; ++i)
             {
-                table[i, j] = i * j;
-                Console.Write("{0, 4}", table[i, j]);
+                for (int j = 1; j < 10; ++j)
+                {
+                    table[i, j] = i * j;
+                    Console.Write("{0, 4}", table[i, j]);
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
-        }
-
+            break;
+        }       
     }
 }
