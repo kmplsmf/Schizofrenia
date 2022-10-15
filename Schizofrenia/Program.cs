@@ -11,19 +11,11 @@ while (true)
     }
     if (operation == 1)
     {
-        Man();
-        static void Man()
-        {
-            randNum();
-        }
+        randNum();
     }
     if (operation == 2)
     {
-        Mai();
-        static void Mai()
-        {
-            umnozhenie();
-        }
+        umnozhenie();
     }
     static void randNum()
     {
