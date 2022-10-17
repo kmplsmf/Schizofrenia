@@ -22,7 +22,7 @@ while (true)
         Random rnd = new();
         while (true)
         {
-            int value = rnd.Next(0, 10);
+            int value = rnd.Next(0, 100);
             int num = Convert.ToInt32(Console.ReadLine());
             if (num == value)
             {
